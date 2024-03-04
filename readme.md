@@ -1,4 +1,4 @@
-# NODE JS + MONGO + JWT BOILERPLATE
+# NODE JS + MONGO + JWT BOILERPLATE TYPESCRIPT
 
 Brief description of what the project does.
 
@@ -6,9 +6,9 @@ Brief description of what the project does.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
+<!-- - [Features](#features)
 - [Contributing](#contributing)
-- [License](#license)
+- [License](#license) -->
 
 ## Installation
 
@@ -37,6 +37,14 @@ Instructions on how to install and run the project.
 Run project as dev `using nodemon`
 
 Example:
+
+1. Open two terminal tabs and brows to project and run
+
+```bash
+npm install
+```
+
+2. Run dev as development with nodemon
 
 ```bash
 npm run dev
