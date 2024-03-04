@@ -2,9 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/server.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+	"start:dev": "ts-node index.ts",
+	"start:pro": "node dist/index.js",
+	"build": "tsc",
     "dev": "nodemon"
   },
   "author": "chhun-piseth",

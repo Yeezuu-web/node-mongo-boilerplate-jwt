@@ -29,7 +29,7 @@ Instructions on how to install and run the project.
 
 3. Start the application:
    ```bash
-   npm start
+   npm start:dev
    ```
 
 ## Usage
@@ -48,4 +48,28 @@ npm install
 
 ```bash
 npm run dev
+```
+
+Run project as production `using tsc`
+
+Example:
+
+1. Open two terminal tabs and brows to project and run
+
+```bash
+npm install
+```
+
+2. Build project using tsc compile to javascript
+
+```bash
+npm run build
+```
+
+3. Start production
+
+`This will be run javascript in ./dist`
+
+```bash
+npm run start:pro
 ```
