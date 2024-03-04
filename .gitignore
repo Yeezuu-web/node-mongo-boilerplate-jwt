@@ -1,0 +1,5 @@
+# exclude everything except directory
+node_modules
+.env
+dist
+

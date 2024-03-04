@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Activation</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #2980b9, #6ab7ff);
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        color: #333333;
+        font-size: 28px;
+        margin: 0;
+      }
+
+      .code {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: #ffffff;
+        font-size: 20px;
+        border-radius: 6px;
+        margin-bottom: 24px;
+      }
+
+      p {
+        color: #555555;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .note {
+        color: #777777;
+        font-style: italic;
+        margin-top: 24px;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Account Activation</h1>
+      </div>
+      <div class="content">
+        <p>Hi <%= user.username %>,</p>
+        <p>
+          Welcome to our platform! To activate your account, please use the
+          following activation code:
+        </p>
+        <div class="code"><%= activationCode %></div>
+        <p>This code will expire in <%= expiration %> minutes.</p>
+        <p class="note">
+          If you didn't request this, please ignore this email.
+        </p>
+      </div>
+      <div class="footer">
+        <p>Thank you!</p>
+      </div>
+    </div>
+  </body>
+</html>
