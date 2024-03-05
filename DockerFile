@@ -4,8 +4,9 @@ FROM node:20
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy package.json and package-lock.json and tsconfig.jsonto the working directory
 COPY package*.json ./
+COPY tscondig*.json ./
 
 # Install dependencies
 RUN npm install
@@ -13,11 +14,30 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose the port on which your Express server is running (change accordingly if it's different)
-EXPOSE 8000
-
-# Build TypeScript files
+# Build and bundle the app into a single file
+RUN ls -a
+RUN npm install
 RUN npm run build
 
-# Command to run your Node.js application using ts-node
-CMD ["npx", "ts-node", "index.ts"]
+## this is stage two , where the app actually runs
+FROM node:20
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json and tsconfig.jsonto the working directory
+COPY package*.json ./
+COPY tscondig*.json ./
+
+# Install dependencies
+RUN npm install --only=production
+COPY --from=0 /usr/src/dist .
+
+# RUN project using pm2
+RUN npm install pm2 -g
+
+# Expose to port 80 or 443
+EXPOSE 80
+
+# Run entire project
+CMD ["pm2-runtime","index.js"]

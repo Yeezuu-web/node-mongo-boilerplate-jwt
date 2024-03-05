@@ -1,5 +1,5 @@
 import app from './src/app';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import connectDB from './src/utils/database';
 
 dotenv.config();
@@ -10,8 +10,8 @@ app.listen(process.env.PORT, () => {
   connectDB();
 });
 
-// app._router.stack.forEach(function (r: any) {
-//   if (r.route && r.route.path) {
-//     console.log(r.route.path);
-//   }
-// });
+app._router.stack.forEach(function (r: any) {
+  if (r.route && r.route.path) {
+    console.log(r.route.path);
+  }
+});
